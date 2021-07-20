@@ -1,0 +1,18 @@
+{
+  "name": "night-version",
+  "version": "1.0.0",
+  "description": "版本控制",
+  "main": "index.js",
+  "bin": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "night",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.0.0",
+    "execa": "^5.1.1",
+    "inquirer": "^8.1.2"
+  }
+}

@@ -1,0 +1,8 @@
+
+/node_modules
+
+# production
+/build
+
+.idea
+yarn.lock
