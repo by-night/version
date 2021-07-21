@@ -25,21 +25,22 @@ const writeVersion = (data, env, output, scriptType) => {
 }
 
 // 执行打包命令
-const runCommand = (env) => {
+const runCommand = (env, showCommand = true) => {
     const envInfo = envEnum.find(item => item.env === env);
     if (!envInfo) return;
     try {
         let {command} = envInfo;
         if (!command) return;
+        console.log(`${env} command is running`);
         execa(command, {
             cwd: rootPath,
-            stdio: [2, 2, 2]
-        });
+            ...(showCommand ? {stdio: [2, 2, 2]} : {})
+        })
     } catch (e) {
         console.log(`${envInfo.name}打包失败，原因是：`, e);
     }
-}
+};
 module.exports = {
     writeVersion,
     runCommand
-}
+};

@@ -1,7 +1,7 @@
 {
-  "name": "night-version",
+  "name": "night-build",
   "version": "1.0.0",
-  "description": "版本控制",
+  "description": "自定义打包工具",
   "main": "index.js",
   "bin": "app.js",
   "scripts": {

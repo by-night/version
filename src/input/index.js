@@ -10,6 +10,7 @@ module.exports = () => {
     let newVList = [];
     let VContent = {};
     let scriptType = 'js';
+    let showLast = false;
     const createTem = (env) => {
         return `{
     "name": "${package.name || ''}",
@@ -134,9 +135,11 @@ module.exports = () => {
 
     program
         .option('-t, --ts', 'download ts')
+        .option('-l, --last', 'show only the last command')
         .action((name) => {
-            const { ts } = name;
+            const { ts, last } = name;
             ts && (scriptType = 'ts');
+            showLast = !!last;
         })
         .parse(process.argv);
     inquirer.prompt([
@@ -187,16 +190,16 @@ module.exports = () => {
         const sign = version.match(/V(\S*): /)[1];
         const time = createTime();
 
-        environment.forEach(item => {
+        environment.forEach((item, index) => {
             const { env } = item;
             const data = VContent[env];
             data.lib.push({
                 sign,
                 version: `${sign}.${time}_${env}`,
                 description
-            })
+            });
             writeVersion(data, env, output, scriptType);
-            runCommand(env);
+            runCommand(env, !(showLast && (index !== environment.length - 1)));
         })
     });
 }
