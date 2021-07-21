@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const execa = require('execa');
 const {rootPath, init} = require("../global");
-const { envEnum } = init;
+const {envEnum} = init;
 
 // 写入新版本
 const writeVersion = (data, env, output, scriptType) => {
@@ -17,7 +17,7 @@ const writeVersion = (data, env, output, scriptType) => {
         if (!fs.existsSync(rootFile)) {
             const temPath = scriptType === 'ts' ? 'template/index.ts' : 'template/index.js';
             fs.createReadStream(path.join(path.join(__dirname, '../'), temPath))
-            .pipe(fs.createWriteStream(path.join(rootFile)));
+                .pipe(fs.createWriteStream(path.join(rootFile)));
         }
     } catch (e) {
         console.log('写入失败：', e)
@@ -35,9 +35,12 @@ const runCommand = (env, showCommand = true) => {
         execa(command, {
             cwd: rootPath,
             ...(showCommand ? {stdio: [2, 2, 2]} : {})
-        }).then(() => {}).catch(err => {
-            console.log(`${envInfo.name}打包失败，原因是：`, err);
-        });
+        })
+            .then(() => {
+            })
+            .catch(err => {
+                console.log(`${envInfo.name}打包失败，原因是：`, err);
+            });
     } catch (e) {
         console.log(`${envInfo.name}打包失败，原因是：`, e);
     }

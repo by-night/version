@@ -1,6 +1,6 @@
 {
   "name": "night-build",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "自定义打包工具",
   "main": "index.js",
   "bin": "app.js",
