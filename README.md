@@ -3,9 +3,9 @@
 ## 1. 使用说明：  
 * 在  `package.json` 中 添加  
 ```
-"build": "night-version"    // 正常执行
-"build": "night-version -t" // 指定输出文件lib/index为ts文件
-"build": "night-version -l" // 只打印最后一个命令的执行日志
+"build": "night-build"    // 正常执行
+"build": "night-build -t" // 指定输出文件lib/index为ts文件
+"build": "night-buildn -l" // 只打印最后一个命令的执行日志
 ```
 ######注：当命令中输出多个进度条时，最好指定 `-l`，避免打乱进度条
 * 配置不同环境的打包命令, 示例如下

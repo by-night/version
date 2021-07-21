@@ -35,7 +35,7 @@ const runCommand = (env, showCommand = true) => {
         execa(command, {
             cwd: rootPath,
             ...(showCommand ? {stdio: [2, 2, 2]} : {})
-        })
+        }).then(() => {});
     } catch (e) {
         console.log(`${envInfo.name}打包失败，原因是：`, e);
     }
