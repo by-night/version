@@ -1,6 +1,6 @@
-###自定义打包工具  
+### 自定义打包工具  
 `github 项目地址：`(https://github.com/by-night/version)  
-####下载  
+#### 下载  
 ```
 npm install night-build
 ```
@@ -11,7 +11,7 @@ npm install night-build
 "build": "night-build -t" // 指定输出文件lib/index为ts文件
 "build": "night-buildn -l" // 只打印最后一个命令的执行日志
 ```
-######注：当命令中输出多个进度条时，最好指定 `-l`，避免打乱进度条
+###### 注：当命令中输出多个进度条时，最好指定 `-l`，避免打乱进度条
 * 配置不同环境的打包命令, 示例如下
 ```
     "build:dev": "react-scripts build",
