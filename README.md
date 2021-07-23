@@ -1,5 +1,5 @@
-###自定义打包工具
-`github 项目地址：`(https://github.com/by-night/version)
+###自定义打包工具  
+`github 项目地址：`(https://github.com/by-night/version)  
 ####下载  
 ```
 npm install night-build
