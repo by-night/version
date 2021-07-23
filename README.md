@@ -1,5 +1,9 @@
-  
-`github 项目地址：`(https://github.com/Zjh-project/version)
+###自定义打包工具
+`github 项目地址：`(https://github.com/by-night/version)
+####下载  
+```
+npm install night-build
+```
 ## 1. 使用说明：  
 * 在  `package.json` 中 添加  
 ```
